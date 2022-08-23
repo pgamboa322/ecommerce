@@ -31,6 +31,27 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
+
+  // Product.findOne({
+  //   where: {
+  //     id: req.params.id
+  //   },
+  //   include: {
+  //       model: Product,
+  //       attributes: ['id', 'product_name', 'price', 'stock']
+  //   }
+  // }).then(productData => {
+  //   if (productData) {
+  //     res.status(404).json({ message: 'Cant find product with this ID.' });
+  //     return;
+  //   }
+  //   res.json(productData);
+  // })
+  
+  // .catch(err => {
+  //   console.log(err);
+    
+  // });
   Product.findOne({
     where: {
       id: req.params.id
